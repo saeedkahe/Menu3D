@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        ul {
+            width: 80px;
+            height: 300px;
+            margin: 100px auto;
+            transform: perspective(900px) skew(25deg, -7deg);
+
+        }
+
+        ul>li {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            color: white;
+            text-align: center;
+            line-height: 60px;
+            background-color: black;
+            transition: 1s;
+            position: relative;
+
+
+
+        }
+
+        ul>li::before,
+        ul>li::after {
+            content: '';
+            position: absolute;
+        }
+
+        ul>li::before {
+            width: 100%;
+            height: 8px;
+            background-color: gray;
+            bottom: -8px;
+            left: -5px;
+            transform: perspective(900px) skew(-50deg)
+        }
+
+        ul>li::after {
+            background-color: rgb(65, 64, 64);
+            top: 4px;
+            left: -10px;
+            width: 10px;
+            height: 100%;
+            transform: skewy(-40deg);
+        }
+
+        ul>li:hover {
+            transform: translate(30%, -30%);
+            background-color: goldenrod;
+        }
+
+        ul>li:hover::before {
+            background-color: gold;
+        }
+
+        ul>li:hover::after {
+            background-color: rgb(136, 109, 43);
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+    </ul>
+</body>
+
+</html>
